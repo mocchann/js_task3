@@ -1,12 +1,18 @@
   const dentakuTop = document.getElementById('dentakuTop');
+  let state = "start";
   
   function button(nums) {
-    dentakuTop.textContent += nums.textContent; 
- 
+      dentakuTop.textContent += nums.textContent;
+      state = "nu";
   }
   
   function button1(nums) {
-    dentakuTop.textContent += nums.textContent; 
+    if(state == "nu"){
+      dentakuTop.textContent += nums.textContent;
+      state = "start";
+    }else{
+      return;
+    }
   }
   
   function calc() {
@@ -15,6 +21,5 @@
   
   function reset() {
     dentakuTop.textContent = ""
+    state = "start";
   }
-  
-  
